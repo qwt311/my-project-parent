@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <meta name="keywords" content="乔老师">
+    <meta name="content" content="乔老师">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link type="text/css" rel="stylesheet" href="${rc.contextPath}/css/login.css">
+    <script type="text/javascript" src="${rc.contextPath}/js/JQuery/jQuery-2.1.3.min.js">
+        contextPath=pageContext.request.getContextPath;
+    </script>
+    <script type="text/javascript" src="${rc.contextPath}/js/register.js"></script>
+    <script type="text/javascript" src="${rc.contextPath}/js/plugin/layer/layer.js"></script>
+    <script src="${rc.contextPath}/js/email.js"></script>
+    <style type="text/css">
+        { outline:none; margin:0; padding:0; font-family:microsoft yahei; }
+        ul, li { list-style:none; }
+        ul {background: #FFFFFF}
+       /* .email { width:198px; height:22px; line-height:22px; border:1px solid #ccc; }
+        .parentCls { width:200px; height:auto; margin:0 auto; }*/
+        .auto-tip li { width:100%; text-align:left; height:22px; line-height:22px; font-size:14px; }
+        .auto-tip li.hoverBg { background:#048698; cursor:pointer; }
+        .auto-tip li em { font-style:normal; }
+        .red { color:#333; }
+        .hidden { display:none; }
+    </style>
+</head>
+<body class="login_bj" >
+    #parse("common/common.vm")
+<div class="zhuce_body">
+    <div class="logo"><a href="#">#*<img src="/image/logo.png" width="114" height="54" border="0">*#</a></div>
+    <div class="zhuce_kong">
+        <div class="zc">
+            <div class="bj_bai">
+                <h3>欢迎注册</h3>
+                <form action="${rc.contextPath}/user/register" id="regUser" method="POST" datatype="user" >
+                    #*<span id="userCue" style="float:left" class="cue">注册请注意格式!</span>*#
+                    <span id="userCue" style="float:left" class="cue">
+                        #if($!registermessage == "false")
+                            <font color='red' class="font"><b>×注册失败，请重新注册!</b></font>
+                        #else
+                            注册请注意格式!
+                        #end</span>
+                        <div class="parentCls">
+                    <input name="phone" id="phone" type="text" class="kuang_txt phone" onchange="checkPhone()" placeholder="手机号" value="$!phone">
+                    <input name="email" id="email" type="email" class="kuang_txt email" onchange="checkEmail()" placeholder="邮箱" value="$!email" required="">
+                    <input name="password" id="password" type="password" class="kuang_txt possword" placeholder="密码">
+                    <input name="" id="password2" type="password" class="kuang_txt possword" onchange="checkPassword()" placeholder="确认密码">
+                    <input name="yaoqingma" id="yaoqingma" type="text" class="kuang_txt possword" onchange="checkYqm()" placeholder="邀请码">
+                    <input name="code" id="inputCode" type="text" maxlength="6" class="yzkuang_txt yanzm" onchange="checkCode()" placeholder="验证码">
+                    <a href="#"><img id="exchange" class="yanzhengtp" src="${rc.contextPath}/code/getCode" width="110" onclick="changeCode()" height="32" /></a>
+                    </div>
+                    #*<div>
+                        <span id="code" class="mycode"></span>
+
+                        <a href="#"><img src="/code/getCode" width="110" height="32" /></a>
+                    </div>*#
+                    <div>
+                        <input id="agree" type="checkbox" checked=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
+                    </div>
+                    <input name="注册" id="reg" type="button"   class="btn_zhuce" value="注册">
+
+                </form>
+            </div>
+            <div class="bj_right">
+                <h3><a href="${rc.contextPath}/user/index" class="toindex">去往主页</a></h3>
+                <p>使用以下账号直接登录</p>
+                <a href="#" class="zhuce_qq">QQ注册</a>
+                <a href="#" class="zhuce_wb">微博注册</a>
+                <a href="#" class="zhuce_wx">微信注册</a>
+                <p>已有账号？<a href="${rc.contextPath}/user/toLogin">立即登录</a></p>
+
+            </div>
+        </div>
+        #*<P>Diyhe.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您定制页面模型</P>*#
+    </div>
+
+</div>
+
+<div style="text-align:center;">
+    #*<p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>*#
+</div>
+
+</body>
+</html>

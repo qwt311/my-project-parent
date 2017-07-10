@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>chart图</title>
+    <style type="text/css">
+        body {
+            background: #528036  url('../image/chart/background.jpg') no-repeat fixed 0 0;
+        }
+    </style>
+</head>
+<body>
+    #parse("common/head.vm")
+    <div  style="text-align:center">
+        jfreechart _直线图 <br><br>
+        点击显示直线图<a href="${rc.contextPath}/chart/getLineChart" target="_blank">getLineChart</a>
+    </div><br/>
+    <div  style="text-align:center">
+        jfreechart _3D饼状图 <br><br>
+        点击显示3D饼状图<a href="${rc.contextPath}/chart/getPieChart" target="_blank">getPieChart</a>
+    </div><br/>
+    <div  style="text-align:center">
+        jfreechart _3D柱状图 <br><br>
+        点击显示3D柱状图<a href="${rc.contextPath}/chart/getBarChart" target="_blank">getBarChart</a>
+    </div>
+</body>
+</html>

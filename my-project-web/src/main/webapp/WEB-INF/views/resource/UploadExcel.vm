@@ -1,0 +1,29 @@
+<div class="modal fade" id="importExcel" tabindex="-1" aria-hidden="true" data-backdrop="static" >
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close_icon" data-dismiss="modal"></span>
+                <h2 class="modal-title" id="myModalLabel">导入Excel</h2>
+            </div>
+            <div class="modal-body">
+                <div style="width: 420px;margin: 0 auto;">
+                    <form class="form-horizontal">
+                        <input type="hidden" id="hiddenUrlId" />
+
+                        <div class="form-group">
+                            <label for="address" class="col-sm-4 control-label">Excel</label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control" name="fileToUpload" id="excel" placeholder="" style="padding:6px;height:auto;">
+                            </div>
+                        </div>
+
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="button"  class="newbtn"  id="import_submit" value="确定"></input>
+                <a  class="newbtn" id="import_close" data-dismiss="modal">关闭</a>
+            </div>
+        </div>
+    </div>
+</div>

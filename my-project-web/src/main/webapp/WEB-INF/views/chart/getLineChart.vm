@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>直线图</title>
+</head>
+<body>
+
+    <div  style="text-align:center">
+    jfreechart _直线图<br><br>
+    柱状图
+    <br><br>
+    <img src="${chartURL}"  width=1000 height=800  border=0  color=gray>
+</div>
+</body>
+</html>

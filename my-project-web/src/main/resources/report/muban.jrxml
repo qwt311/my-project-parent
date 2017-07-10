@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-05-17T18:59:54 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="oneTwo" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4d1a24d1-0403-41ac-be09-383495428042">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="studentName" class="java.lang.String">
+		<fieldDescription><![CDATA[studentName]]></fieldDescription>
+	</field>
+	<field name="gradeName" class="java.lang.String">
+		<fieldDescription><![CDATA[gradeName]]></fieldDescription>
+	</field>
+	<field name="level" class="java.lang.String">
+		<fieldDescription><![CDATA[level]]></fieldDescription>
+	</field>
+	<field name="path" class="java.io.InputStream">
+		<fieldDescription><![CDATA[path]]></fieldDescription>
+	</field>
+	<background>
+		<band height="595">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement x="0" y="0" width="842" height="595" isPrintWhenDetailOverflows="true" uuid="d086dc62-778a-4820-ab16-91898a261ce3"/>
+				<image>
+					<reportElement x="0" y="0" width="842" height="595" uuid="f34b9b69-f42c-4f55-a0f6-51bf2d926a2f">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA[$F{path}]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="150" y="230" width="180" height="40" uuid="87df5578-f973-45a2-b69b-b4d20898e2fe"/>
+					<textElement>
+						<font fontName="黑体" size="24" isUnderline="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{studentName}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="240" y="331" width="80" height="38" uuid="c955f2ac-ab81-4f78-bb70-61c6f963ad0e"/>
+				<textElement>
+					<font fontName="黑体" size="24" isUnderline="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gradeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="331" width="60" height="29" uuid="84958080-a665-4f63-beb3-2e6c681ca99b"/>
+				<textElement>
+					<font fontName="黑体" size="24" isUnderline="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="230" width="120" height="40" uuid="6c41b696-e3b3-4657-ada3-690cb1689816"/>
+				<textElement>
+					<font size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[同学]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="280" width="500" height="37" uuid="62655083-2ef4-4b53-be08-d57d30bd8498"/>
+				<textElement>
+					<font size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[在2016年高斯中小学生数学思维能力测评中]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="330" width="100" height="40" uuid="de7d27b5-461b-4cc0-9083-f4d130ba72d9"/>
+				<textElement>
+					<font size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[被评定为]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="330" width="100" height="40" uuid="6a964dbe-5d80-45bc-8652-b7c197bc9490"/>
+				<textElement>
+					<font size="24" isUnderline="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[年级]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="331" width="100" height="39" uuid="a783cad9-97c3-4386-80b8-adcdaeef3950"/>
+				<textElement>
+					<font fontName="SansSerif" size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[级]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="240" width="137" height="30" uuid="f1a0be42-e095-48c4-a1c4-2e1371e4db95"/>
+				<textElement>
+					<font size="16" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[_____________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="339" width="100" height="41" uuid="18ffcf89-0d64-41dd-aff3-d258431eb80f"/>
+				<textElement>
+					<font size="20" isUnderline="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[______]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="340" width="100" height="40" uuid="f023ac03-f6d3-4b05-99ab-56fb6eafd62a"/>
+				<textElement>
+					<font size="20" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[______]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="280" width="100" height="39" uuid="9ac7ee7d-8dbe-49c1-92c2-3585dcfbff57"/>
+				<textElement>
+					<font fontName="SansSerif" size="24" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[,]]></text>
+			</staticText>
+		</band>
+	</background>
+</jasperReport>

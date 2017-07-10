@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>网站首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Cool Under Construction Page Flat Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="${rc.contextPath}/build/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="${rc.contextPath}/build/css/jquery.countdown.css" />
+    <link rel="stylesheet" href="${rc.contextPath}/css/style.css" type="text/css">
+    <!--js-->
+    <script src="${rc.contextPath}/build/js/jquery.min.js"></script>
+    #*<script src="${rc.contextPath}/build/js/jquery.countdown.js"></script>*#
+    <script src="${rc.contextPath}/build/js/script.js"></script>
+    <script src="${rc.contextPath}/build/js/sendEmail.js"></script>
+    <script src="${rc.contextPath}/build/js/checkEmail.js"></script>
+    <script type="text/javascript">
+
+        function show(){
+
+        }
+        /*setInterval(show,10000);*/
+    </script>
+    <!--js-->
+    <style type="text/css">
+        { outline:none; margin:0; padding:0; font-family:microsoft yahei; }
+        ul, li { list-style:none; }
+        /* .email { width:198px; height:22px; line-height:22px; border:1px solid #ccc; }
+         .parentCls { width:200px; height:auto; margin:0 auto; }*/
+        .auto-tip li { width:100%; text-align:left; height:22px; line-height:22px; font-size:14px; }
+        .auto-tip li.hoverBg { background:#048698; cursor:pointer; }
+        .auto-tip li em { font-style:normal; }
+        .red { color:#333; }
+        .hidden { display:none; }
+    </style>
+</head>
+<body>
+#*#parse("common/time.vm")*#
+#parse("common/head.vm")
+<div class="header">
+    <h1>这个网站正在建设中</h1>
+</div>
+<h4>$!id</h4>
+<div class="content">
+    <div class="content1">
+        <img src="${rc.contextPath}/build/images/work.png" alt="under-construction">
+    </div>
+    <div class="content2">
+        <div class="timer_wrap">
+            <div id="counter"> </div>
+        </div>
+    </div>
+    <div class="content3">
+        <p>订阅我们的新闻信！</p>
+        <ul class="form">
+            <li>
+                <form action="" class="sendEmailForm" method="POST">
+                    <div class="parentCls">
+                    <input type="email" class="enterEmail" placeholder="输入您的电子邮件地址" required="">
+                    <input type="button" id="sendEmail" onclick="sendEmails()" value="订阅">
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+#parse("common/footer.vm")
+</body>
+</html>

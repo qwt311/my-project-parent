@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.project.dao.OnlyOneUserMapper" >
+
+    <sql id="Base_List">
+        phone,utr,syzt
+    </sql>
+
+
+    <insert id="addOnlyOneUserMessage" parameterType="com.project.entity.OnlyOneUser">
+        insert into only_one_user(phone,utr,syzt)
+        VALUES (
+          #{phone,jdbcType=VARCHAR},
+          #{utr,jdbcType=VARCHAR},
+          #{syzt,jdbcType=INTEGER}
+        )
+    </insert>
+
+    <update id="updateOnlyOneUserMessage" parameterType="com.project.entity.OnlyOneUser">
+        UPDATE  only_one_user
+        set
+        <if test="utr != null ">
+            utr = #{utr,jdbcType=VARCHAR},
+        </if>
+        <if test="syzt != null">
+            syzt = #{syzt,jdbcType=INTEGER}
+        </if>
+        where phone = #{phone,jdbcType=VARCHAR}
+    </update>
+    
+    <select id="selectOnlyOneUser" parameterType="com.project.entity.OnlyOneUser" resultType="com.project.entity.OnlyOneUser">
+        select
+          <include refid="Base_List"/>
+        from only_one_user
+        where 1 = 1
+        <if test="phone != null">
+            and phone = #{phone,jdbcType=VARCHAR}
+        </if>
+        <if test="utr != null">
+            and  utr = #{utr,jdbcType=VARCHAR}
+        </if>
+        <if test="syzt != null">
+            and syzt = #{syzt,jdbcType=INTEGER}
+        </if>
+    </select>
+
+</mapper>

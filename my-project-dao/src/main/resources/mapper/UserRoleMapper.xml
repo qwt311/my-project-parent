@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.project.entity.UserRole">
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+    <collection property="roleAuthorities" ofType="com.project.entity.RoleAuthority">
+      <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+      <result column="authorityname" jdbcType="VARCHAR" property="authorityname" />
+    </collection>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    ur.phone, ur.rolename,ra.rolename, ra.authorityname
+  </sql>
+
+  <insert id="insertIntoList" parameterType="java.util.List">
+    insert into user_role (phone, rolename)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.phone,jdbcType=VARCHAR}, #{item.rolename,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+
+  <delete id="deleteWithUser" parameterType="com.project.entity.UserRole">
+    delete from user_role
+    where 1 = 1
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+  </delete>
+
+  <select id="selectWithConditions" parameterType="com.project.entity.UserRole" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_role ur, role_authority ra
+    where 1 = 1 and ur.rolename = ra.rolename
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <update id="updateUserRole" parameterType="com.project.entity.UserRole">
+    update user_role
+    <set>
+      <if test="rolename != null">
+        rolename = #{rolename,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where 1 = 1
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+  </update>
+
+</mapper>

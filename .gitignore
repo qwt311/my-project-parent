@@ -1,0 +1,15 @@
+*.class
+
+#  Package files  #
+.idea
+*.jar
+*.war
+*.ear
+*.iml
+*.target
+
+my-project-common/target
+my-project-dao/target
+my-project-entity/target
+my-project-service/target
+my-project-web/target

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.project.dao.YqmInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.project.entity.YqmInfo" >
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="yaoqingma" property="yaoqingma" jdbcType="VARCHAR" />
+    <result column="usecount" property="usecount" jdbcType="BIGINT" />
+    <result column="zzzt" property="zzzt" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    phone, yaoqingma, usecount,zzzt
+  </sql>
+
+  <insert id="insertIntoYqmInfo" parameterType="com.project.entity.YqmInfo">
+    insert into yqmInfo
+    (phone,yaoqingma,usecount,zzzt)
+    values(
+            #{phone,jdbcType=VARCHAR},
+            #{yaoqingma,jdbcType=VARCHAR},
+            #{usecount,jdbcType=BIGINT},
+            #{zzzt,jdbcType=VARCHAR})
+  </insert>
+
+  <select id="selectAllInfo" resultType="com.project.entity.YqmInfo" parameterType="com.project.entity.YqmInfo">
+    select
+    <include refid="Base_Column_List"/>
+    from yqminfo
+    where 1=1
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="zzzt != null">
+      and zzzt = #{zzzt,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <select id="selectYqmInfoByYqm" resultType="com.project.entity.YqmInfo" parameterType="com.project.entity.YqmInfo">
+    select
+    <include refid="Base_Column_List"/>
+    from yqminfo
+    where 1=1 and zzzt = 'Y'
+    and yaoqingma = #{yaoqingma,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateYqmCount" parameterType="com.project.entity.YqmInfo" >
+    update yqminfo
+    set useCount = #{usecount,jdbcType=BIGINT}
+    where 1=1 and zzzt = 'Y'
+    <if test="yaoqingma != null" >
+      and yaoqingma = #{yaoqingma,jdbcType=VARCHAR}
+    </if>
+  </update>
+
+  <update id="updateZzzt" parameterType="com.project.entity.YqmInfo">
+    update yqminfo
+    set zzzt = 'N'
+    where 1=1 and
+    <if test="phone != null" >
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+  </update>
+</mapper>

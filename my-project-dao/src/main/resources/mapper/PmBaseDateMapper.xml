@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.PmBaseDateMapper">
+
+  <resultMap id="BaseResultMap" type="com.project.entity.PmBaseDate">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="dicKey" jdbcType="VARCHAR" property="dicKey" />
+    <result column="dicValue" jdbcType="VARCHAR" property="dicValue" />
+    <result column="dicType" jdbcType="VARCHAR" property="dicType" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, dicKey, dicValue, dicType
+  </sql>
+
+  <select id="selectByConditions" parameterType="com.project.entity.PmBaseDate" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from pm_base_data
+    where 1 = 1
+    <if test="id != null">
+      and id = #{id,jdbcType=BIGINT}
+    </if>
+    <if test="dicKey != null">
+      and dicKey = #{dicKey,jdbcType=VARCHAR}
+    </if>
+    <if test="dicValue != null">
+      and dicValue = #{dicValue,jdbcType=VARCHAR}
+    </if>
+    <if test="dicType != null">
+      and dicType = #{dicType,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+
+  <insert id="insertPmBaseData" parameterType="com.project.entity.PmBaseDate">
+    insert into pm_base_data (dicKey, dicValue,
+      dicType)
+    values  #{dicKey,jdbcType=VARCHAR}, #{dicValue,jdbcType=VARCHAR},
+      #{dicType,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertByList" parameterType="com.project.entity.PmBaseDate">
+    insert into pm_base_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dicKey != null">
+        dicKey,
+      </if>
+      <if test="dicValue != null">
+        dicValue,
+      </if>
+      <if test="dicType != null">
+        dicType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dicKey != null">
+        #{dicKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dicValue != null">
+        #{dicValue,jdbcType=VARCHAR},
+      </if>
+      <if test="dicType != null">
+        #{dicType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updatePmBaseDataList" parameterType="com.project.entity.PmBaseDate">
+    update pm_base_data
+    <set>
+      <if test="dicKey != null">
+        dicKey = #{dicKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dicValue != null">
+        dicValue = #{dicValue,jdbcType=VARCHAR},
+      </if>
+      <if test="dicType != null">
+        dicType = #{dicType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where 1 = 1
+    <if test="id != null">
+      and id = #{id,jdbcType=BIGINT}
+    </if>
+    <if test="dicKey != null">
+      and dicKey = #{dicKey,jdbcType=VARCHAR}
+    </if>
+    <if test="dicValue != null">
+      and dicValue = #{dicValue,jdbcType=VARCHAR}
+    </if>
+    <if test="dicType != null">
+      and dicType = #{dicType,jdbcType=VARCHAR}
+    </if>
+  </update>
+
+  <update id="updateById" parameterType="com.project.entity.PmBaseDate">
+    update pm_base_data
+    <set>
+      <if test="dicKey != null">
+        dicKey = #{dicKey,jdbcType=VARCHAR},
+      </if>
+      <if test="dicValue != null">
+        dicValue = #{dicValue,jdbcType=VARCHAR},
+      </if>
+      <if test="dictype != null">
+        dicType = #{dictype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+</mapper>

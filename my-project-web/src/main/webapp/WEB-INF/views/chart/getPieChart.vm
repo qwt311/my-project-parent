@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>3D饼状图</title>
+</head>
+<body>
+
+<div  style="text-align:center">
+    jfreechart _3D饼状图 <br><br>
+    柱状图
+    <br><br>
+    <img src="${chartPieURL}"  width=1000 height=800  border=0  color=gray>
+</div>
+</body>
+</html>

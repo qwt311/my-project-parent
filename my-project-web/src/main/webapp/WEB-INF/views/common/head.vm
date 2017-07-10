@@ -1,0 +1,15 @@
+#parse("common/common.vm")
+<div class="login_div" style="margin-left: 1660px">
+   <br/>
+        <a href="${rc.contextPath}/user/index">去往主页</a>
+        <a href="${rc.contextPath}/game/toPinTu">拼图游戏</a>
+        <a href="${rc.contextPath}/chart/toChartIndex">去往chart页面</a>
+        <a href="${rc.contextPath}/resource/index">去往resource页面</a>
+    #if(!$!session.getAttribute("user"))
+        <a href="${rc.contextPath}/user/toLogin">去登录</a>
+        <a href="${rc.contextPath}/user/toRegister">去注册</a>
+    #else
+        <h5>恭喜：${user.phone} 登陆成功!</h5>
+        <h5><a href="${rc.contextPath}/user/logout">退出</a></h5>
+    #end
+</div>
