@@ -3,13 +3,26 @@
 //登录时手机号验证
 function checkLoginPhone (){
 
+    /*swal({
+        title: "错误信息!",
+        text: "Here's my error message!",
+        type: "input",
+        confirmButtonText: "OK"
+    });*/
+
     var phone = $('#phone').val();
     if (phone == "") {
         $('#phone').focus().css({
             border: "1px solid red",
             boxShadow: "0 0 2px red"
         });
-        $('#userCue').html("<font color='red'><b>×手机号不能为空</b></font>");
+        //$('#userCue').html("<font color='red'><b>×手机号不能为空</b></font>");
+        swal({
+            title: "×手机号不能为空",
+            //text: "×手机号不能为空",
+            type: "warning",
+            confirmButtonText: "OK"
+        });
         return false;
     }else {
         $('#phone').css({
@@ -25,7 +38,13 @@ function checkLoginPhone (){
             border: "1px solid red",
             boxShadow: "0 0 2px red"
         });
-        $('#userCue').html("<font color='red'><b>×手机号码不正确</b></font>");
+        //$('#userCue').html("<font color='red'><b>×手机号码不正确</b></font>");
+        swal({
+            title: "×手机号码不正确",
+            //text: "×手机号码不正确",
+            type: "warning",
+            confirmButtonText: "OK"
+        });
         return false;
 
     }else {
