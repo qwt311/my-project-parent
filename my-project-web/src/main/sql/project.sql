@@ -48,8 +48,7 @@ CREATE TABLE `only_one_user` (
 -- ----------------------------
 -- Records of only_one_user
 -- ----------------------------
-INSERT INTO `only_one_user` VALUES ('18636967836', 'sNvzZxhw', '0');
-INSERT INTO `only_one_user` VALUES ('18636967833', 'vMaNy3WS', '0');
+
 
 -- ----------------------------
 -- Table structure for pm_base_data
@@ -66,10 +65,6 @@ CREATE TABLE `pm_base_data` (
 -- ----------------------------
 -- Records of pm_base_data
 -- ----------------------------
-INSERT INTO `pm_base_data` VALUES ('1', 'sendmail', 'qiaowentao@yolo24.com', 'mailserver');
-INSERT INTO `pm_base_data` VALUES ('2', 'username', 'qiaowentao', 'mailserver');
-INSERT INTO `pm_base_data` VALUES ('3', 'password', 'xiaoqiao.1931', 'mailserver');
-INSERT INTO `pm_base_data` VALUES ('4', 'host', 'mail.yolo24.com', 'mailserver');
 
 -- ----------------------------
 -- Table structure for role
@@ -158,8 +153,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '18636967836', 'PCx60Yve4yvKEVRy', 'f0ff4d62975a4ea7582040e3fb1a33662748cc65', null, null, '0.000', '2016-08-24 18:38:26', '2016-08-24 18:38:26', '0', null, null, 'qwt311@126.com', null, '1561561');
-INSERT INTO `user` VALUES ('2', '18636967833', 'RBMB2HdUKYmlQZxo', 'ef0979c8c986ab7dc61220bd7c47570163c498d6', null, null, '0.000', '2016-08-26 15:23:14', '2016-08-26 15:23:14', '0', null, null, 'qwt311@126.co', null, '1561561');
 
 -- ----------------------------
 -- Table structure for user_role
@@ -177,8 +170,6 @@ CREATE TABLE `user_role` (
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
-INSERT INTO `user_role` VALUES ('18636967836', 'admin');
-INSERT INTO `user_role` VALUES ('18636967833', 'manager');
 
 -- ----------------------------
 -- Table structure for yqminfo
@@ -195,4 +186,3 @@ CREATE TABLE `yqminfo` (
 -- ----------------------------
 -- Records of yqminfo
 -- ----------------------------
-INSERT INTO `yqminfo` VALUES ('18636967836', '1561561', '2', 'Y');
