@@ -182,7 +182,7 @@
       #{qq,jdbcType=VARCHAR},
     </if>
     <if test="yaoqingma != null">
-      #{yaoqingma,jdbcType=VARCHAR},
+
     </if>
     <if test="syzt != null">
       #{syzt,jdbcType=INTEGER},
@@ -191,10 +191,11 @@
 
   <insert id="insertSelective" parameterType="User" >
     insert into user
-    (<include refid="Insert_Sql"/> )
-    values (
-        <include refid="Insert_Value_sql"/>
-        )
+    (phone, password, nicheng, sex, money, createtime, updtime, salt, email, address, username, qq, yaoqingma, syzt )
+    values (#{phone,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{nicheng,jdbcType=VARCHAR},#{sex,jdbcType=TINYINT},
+            #{money,jdbcType=DECIMAL},#{createtime,jdbcType=TIMESTAMP},#{updtime,jdbcType=TIMESTAMP},#{salt,jdbcType=VARCHAR},
+            #{email,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},
+            #{yaoqingma,jdbcType=VARCHAR},#{syzt,jdbcType=INTEGER})
   </insert>
 
   <sql id="Update_sql">

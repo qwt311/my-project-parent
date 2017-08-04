@@ -76,7 +76,7 @@ public class LoginControler {
     @RequestMapping(value="/register",method = {RequestMethod.POST,RequestMethod.GET})
     public ModelAndView register(HttpServletRequest request, HttpServletResponse response, ModelAndView model,
                                  User user){
-        logger.info("## register ##");
+        logger.info("## register user-{}##",user);
         try{
             user.setSyzt(0);
             String utr = RandomString.generateRandomString(8);

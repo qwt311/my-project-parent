@@ -26,7 +26,7 @@ public class User  implements Serializable {
     private String sexStr;
 
     /** 账户余额  **/
-    private BigDecimal money;
+    private BigDecimal money = BigDecimal.valueOf(0.000);
 
     private String monetStr;
 
